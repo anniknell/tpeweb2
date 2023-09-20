@@ -13,4 +13,4 @@ Hay dos tablas, una utilizada para definir los productos, y otra para definir la
 El diagrama de entidad-relación tiene un elemento en común que es "categoriasID".
 
 DER:
-
+https://github.com/anniknell/tpeweb2/blob/main/DER%20comercial.png?raw=true
