@@ -16,5 +16,5 @@ Login:
 Usuario: webadmin, Contraseña: admin.
 
 DER:
-![DER comercial](![image](https://github.com/anniknell/tpeweb2/assets/144175329/7df669fe-dee7-4e91-8910-9063e9df79b8)
+![DER comercial]![image](https://github.com/anniknell/tpeweb2/assets/144175329/7df669fe-dee7-4e91-8910-9063e9df79b8)
 
