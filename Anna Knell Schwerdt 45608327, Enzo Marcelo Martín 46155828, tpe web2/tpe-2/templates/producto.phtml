@@ -1,0 +1,15 @@
+<?php require 'templates/header.phtml' ?>   
+<div class="container">
+    <h1>Productos</h1>
+
+    <h2>Detalles del Producto</h2>
+    <div class="producto-details">
+        <h3><?= $producto->Nombre; ?></h3>
+        <p><strong>Descripción:</strong> <?= $producto->Descripcion; ?></p>
+        <p><strong>Categoría:</strong> <?= $producto->CategoriaID; ?></p>
+        <p><strong>Precio:</strong> <?= $producto->Precio; ?></p>
+    </div>
+    <a href="<?= BASE_URL; ?>productos" class="btn btn-primary mt-3">Volver a la lista de productos</a>
+</div>
+
+<?php require 'templates/footer.phtml' ?>   

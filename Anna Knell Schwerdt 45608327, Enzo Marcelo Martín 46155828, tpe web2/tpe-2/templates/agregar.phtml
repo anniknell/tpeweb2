@@ -1,0 +1,23 @@
+<?php require 'templates/header.phtml' ?>
+
+<form action="agregado" method="POST">
+    <label for="">Producto</label>
+    <input type="text" placeholder="Agrega un producto: " name="Nombre">
+    <label for="">Descripción</label>
+    <input type="text" placeholder="Ingrese la descripción: " name="Descripcion">
+    <label for="">Precio</label>
+    <input type="number" placeholder="Ingrese el precio: " name="Precio" min="1">
+    <label for="CategoriaID" class="form-label">Categoria</label>
+             <select name="CategoriaID" class="form-select" id="CategoriaID" aria-label="Seleccione categoría" required>
+                 <option selected>Seleccione categoría</option>
+                     <?php foreach ($categorias as $categoria): ?>
+                 <option value="<?= $categoria->CategoriaID?>"><?= $categoria->Nombre?></option>
+                    <?php endforeach; ?>
+            </select>
+    <input type="submit">
+    <?php if(!empty($id)) : ?>
+        <p>Agregado!</p>
+    <?php endif ?>
+</form>
+
+<?php require 'templates/footer.phtml' ?>
