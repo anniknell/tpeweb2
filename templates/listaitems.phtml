@@ -1,0 +1,60 @@
+<?php require 'templates/header.phtml' ?>   
+
+<div class="container">
+    <h2>Filtrar Productos</h2>
+
+    <form method="get" action="" class="form-inline">
+        <div class="form-group">
+            <label for="categoria" class="mr-2">Filtrar por categoría:</label>
+            <select name="categoria" id="categoria" class="form-control mr-2">
+                <option value="">Todas</option>
+                <?php foreach ($categorias as $categoria) { ?>
+                    <option value="<?= $categoria->CategoriaID; ?>"><?= $categoria->Nombre; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+
+    <h2>Lista de Productos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Descripción</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($productos as $producto) { ?>
+                <tr>
+                <td><a href="<?php BASE_URL; ?>verProducto/<?= $producto->ProductoID; ?>"><?= $producto->Nombre; ?></a></td>
+                    <td><?=$producto->Descripcion?></td>
+                        <?php
+                        $nombreCategoria = '';
+                        foreach ($categorias as $categoria) {
+                            if ($categoria->CategoriaID == $producto->CategoriaID) {
+                                $nombreCategoria = $categoria->Nombre;
+                                break; 
+                            }
+                        }
+                        ?>
+                    </td>
+                    <td><?=$categoria->Nombre?></td>
+                    <td><?=$producto->Precio ?></td>
+                    <td><?=$producto->ProductoID?></td>
+                </tr>
+                <td>
+                <?php if (isset($_SESSION['USER_ID'])) { ?>
+                <a href="editar/<?=$producto->ProductoID?>" type="button" class="btn btn-dark">Editar</a>
+                <a href="borrar/<?=$producto->ProductoID?>" type="button" class="btn btn-dark">Eliminar</a>
+                </td>
+            </td>
+            <?php } }?>
+        </tbody>
+    </table>
+</div>
+
+<?php require_once "templates/footer.phtml" ?>
