@@ -10,7 +10,7 @@ Comercial.
 Explicación:
 En este trabajo hicimos un modelo de datos en phpMyAdmin basandonos en la categoría "comercial".
 Hay dos tablas, una utilizada para definir los productos, y otra para definir las categorías de esos.
-El diagrama de entidad-relación tiene un elemento en común que es "categoriasID".
+El diagrama de entidad-relación tiene un elemento en común que es "categoriasID". Para la segunda entrega, tambíen le agregamos una tercer tabla llamada "Usuario" para poder guardar los datos.
 
 Login:
 Usuario: webadmin, Contraseña: admin.
