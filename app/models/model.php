@@ -4,26 +4,15 @@
         protected $db;
 
       function __construct() {
-        $this->db = new PDO('mysql:host='. MYSQL_HOST.';charset=utf8', MYSQL_USER, MYSQL_PASS);
-        if($this->db){
-          $this->createDatabaseSiNoExiste();
-          $this->db->exec('USE ' . MYSQL_DB);
-          $this->deploy();
-        }
-        
+        $this->db = new PDO('mysql:host='. MYSQL_HOST .';dbname='. MYSQL_DB .';charset=utf8', MYSQL_USER, MYSQL_PASS);
+        $this->deploy();
       }
-
-      function createDatabaseSiNoExiste() {
-        $databaseName = MYSQL_DB;
-        $query = "CREATE DATABASE IF NOT EXISTS `$databaseName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
-        $this->db->exec($query);
-        
-    }
 
         function deploy() {
             $query = $this->db->query('SHOW TABLES');
             $tables = $query->fetchAll();
-            
+            $meOJ2PSOLv1iU1lnr2U7yu0BQXWzBG = '$meOJ2PSOLv1iU1lnr2U7yu0BQXWzBG';
+
             if(count($tables)==0) {
               // Si no hay crearlas
               $sql =<<<END
